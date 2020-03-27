@@ -3,9 +3,9 @@ package main
 import (
     "fmt"
     "os"
-    "laravelnew"
-    "laravelreset"
-    "laravelopen"
+    "laravelautomatisation/laravelnew"
+    "laravelautomatisation/laravelreset"
+    "laravelautomatisation/laravelopen"
 )
 
 func main() {
