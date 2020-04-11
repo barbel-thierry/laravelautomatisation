@@ -3,7 +3,6 @@ package main
 import (
     "fmt"
     "os"
-    
     "github.com/barbel-thierry/laravelautomatisation/laravelnew"
     "github.com/barbel-thierry/laravelautomatisation/laravelreset"
     "github.com/barbel-thierry/laravelautomatisation/laravelopen"
@@ -20,7 +19,7 @@ func main() {
     case "new":
         laravelnew.Project(name)
     case "reset":
-        laravelreset.CreateOrReset()
+        laravelreset.CreateOrReset(name)
     case "open":
         laravelopen.Run()
     case "setup":
