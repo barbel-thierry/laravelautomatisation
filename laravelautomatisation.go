@@ -11,6 +11,7 @@ import (
 func main() {
     cmd := os.Args[1]
     name := ""
+    
     if len(os.Args) > 2 {
         name = os.Args[2]
     }

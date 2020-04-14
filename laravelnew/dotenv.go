@@ -2,7 +2,6 @@ package laravelnew
 
 import (
 	"github.com/joho/godotenv"
-	"fmt"
 	"os"
 )
 
@@ -13,7 +12,7 @@ func AlterEnv(project string) {
 	var env map[string]string
 	env, err := godotenv.Read()
 	if err != nil {
-		fmt.Println(err)
+		panic(err)
 	}
 
 	env["DB_DATABASE"] = project
@@ -26,6 +25,6 @@ func AlterEnv(project string) {
 
 	writeErr := godotenv.Write(env, "./.env")
 	if writeErr != nil {
-		fmt.Println(writeErr)
+		panic(writeErr)
 	}
 }

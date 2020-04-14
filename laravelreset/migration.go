@@ -9,5 +9,8 @@ import (
 func Migrate() {
 	migrate := exec.Command("php", "artisan", "migrate:fresh", "--drop-views", "--seed")
 	migrate.Stdout = os.Stdout
-	migrate.Run()
+	err := migrate.Run()
+	if err != nil {
+		panic(err)
+	}
 }
