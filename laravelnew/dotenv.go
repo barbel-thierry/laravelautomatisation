@@ -5,8 +5,8 @@ import (
 	"os"
 )
 
-// AlterEnv edits dotenv file to standardise DB and mail (mailhog) access.
-func AlterEnv(project string) {
+// alterEnv edits dotenv file to standardise DB and mail (mailhog) access.
+func alterEnv(project string) {
 	os.Chdir(project)
 
 	var env map[string]string

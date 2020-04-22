@@ -5,8 +5,8 @@ import (
 	"os"
 )
 
-// Migrate runs migration with fresh, seed, and drop views options.
-func Migrate() {
+// migrate runs migration with fresh, seed, and drop views options.
+func migrate() {
 	migrate := exec.Command("php", "artisan", "migrate:fresh", "--drop-views", "--seed")
 	migrate.Stdout = os.Stdout
 	err := migrate.Run()

@@ -2,8 +2,8 @@ package laravelnew
 
 import "os/exec"
 
-// Create launches Laravel 'new' command.
-func Create(project string) {
+// create launches Laravel 'new' command.
+func create(project string) {
 	cmd := exec.Command("laravel", "new", project)
 	err := cmd.Run()
 	if err != nil {

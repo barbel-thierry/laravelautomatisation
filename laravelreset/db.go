@@ -7,8 +7,8 @@ import (
 	"os/exec"
 )
 
-// GetDbName parses dotenv file to get the defined DB name.
-func GetDbName() string {
+// getDbName parses dotenv file to get the defined DB name.
+func getDbName() string {
 	err := godotenv.Load()
 	if err != nil {
 		fmt.Println("Error loading .env file")
@@ -18,8 +18,8 @@ func GetDbName() string {
 	return os.Getenv("DB_DATABASE")
 }
 
-// CreateDb logs into docker container to try and create mysql DB.
-func CreateDb(db string, container string) {
+// createDb logs into docker container to try and create mysql DB.
+func createDb(db string, container string) {
 	if container == "" {
 		fmt.Println("Error loading .env file")
 		os.Exit(1)

@@ -5,8 +5,8 @@ import (
 	"fmt"
 )
 
-// FolderExists checks if folder with this Project name already exists.
-func FolderExists(folder string) {
+// folderExists checks if folder with this Project name already exists.
+func folderExists(folder string) {
 	_, err := os.Stat(folder)
 	
 	if !os.IsNotExist(err) {
