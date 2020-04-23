@@ -11,5 +11,5 @@ func Project(name string) {
 
 	alterEnv(name)
 
-	fmt.Println("You can now cd into '" + name + "/' before launching 'lpr' to Create database (if not exists).")
+	fmt.Println("Laravel project has been created.")
 }
