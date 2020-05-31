@@ -1,10 +1,11 @@
 package laravelreset
 
 import (
-	"os"
 	"fmt"
-	"github.com/joho/godotenv"
+	"os"
 	"os/exec"
+
+	"github.com/joho/godotenv"
 )
 
 // getDbName parses dotenv file to get the defined DB name.
@@ -24,9 +25,9 @@ func createDb(db string, container string) {
 		fmt.Println("Error loading .env file")
 		os.Exit(1)
 	}
-	
-	createDb := "CREATE DATABASE IF NOT EXISTS " + db + ";"
-	create := exec.Command("docker", "exec", container, "mysql", "-u", os.Getenv("DB_USERNAME"), "-p" + os.Getenv("DB_PASSWORD"), "-e", createDb)
+
+	createDb := "CREATE DATABASE IF NOT EXISTS `" + db + "`;"
+	create := exec.Command("docker", "exec", container, "mysql", "-u", os.Getenv("DB_USERNAME"), "-p"+os.Getenv("DB_PASSWORD"), "-e", createDb)
 	create.Run()
 	fmt.Println("Database '" + db + "' created (if not existed before).")
 }
