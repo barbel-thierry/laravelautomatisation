@@ -4,7 +4,7 @@ import "os/exec"
 
 // create launches Laravel 'new' command.
 func create(project string, version string) {
-	var cmd *Cmd
+	var cmd *exec.Cmd
 	if version == "" {
 		cmd = exec.Command("laravel", "new", project)
 	} else {
