@@ -11,14 +11,16 @@ import (
 func main() {
     cmd := os.Args[1]
     name := ""
+    version := ""
     
     if len(os.Args) > 2 {
         name = os.Args[2]
+        version = os.Args[3]
     }
 
     switch cmd {
     case "new":
-        laravelnew.Project(name)
+        laravelnew.Project(name, version)
     case "reset":
         laravelreset.CreateOrReset(name)
     case "open":
