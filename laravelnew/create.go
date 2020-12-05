@@ -6,7 +6,7 @@ import "os/exec"
 func create(project string, version string) {
 	var cmd *exec.Cmd
 	if version == "" {
-		cmd = exec.Command("laravel", "new", project)
+		cmd = exec.Command("composer", "create-project", "--prefer-dist", "laravel/laravel", project)
 	} else {
 		cmd = exec.Command("composer", "create-project", "--prefer-dist", "laravel/laravel:" + version,  project)
 	}
