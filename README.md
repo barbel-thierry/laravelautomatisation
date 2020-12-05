@@ -3,7 +3,7 @@
 ## Install
 
 ```
-go get github.com/barbel-thierry/laravelautomatisation
+go get -u github.com/barbel-thierry/laravelautomatisation
 ```
 
 For comfort purpose, add these aliases in ~/.bashrc:
