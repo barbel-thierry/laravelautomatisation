@@ -12,9 +12,12 @@ func main() {
     cmd := os.Args[1]
     name := ""
     version := ""
-    
+
     if len(os.Args) > 2 {
         name = os.Args[2]
+    }
+
+    if len(os.Args) > 3 {
         version = os.Args[3]
     }
 
