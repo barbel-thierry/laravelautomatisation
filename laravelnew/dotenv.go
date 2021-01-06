@@ -19,11 +19,12 @@ func alterEnv(project string) {
 	env["DB_USERNAME"] = "homestead"
 	env["DB_PASSWORD"] = "secret"
 	env["APP_URL"] = "http://" + project + ".test"
+	env["ASSET_URL"] = "http://" + project + ".test"
 	env["MAIL_DRIVER"] = "smtp"
 	env["MAIL_HOST"] = "localhost"
 	env["MAIL_PORT"] = "1025"
 
-	writeErr := godotenv.Write(env, "./.env")
+	writeErr := godotenv.Write(env, "./.env.example")
 	if writeErr != nil {
 		panic(writeErr)
 	}
